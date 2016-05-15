@@ -6,7 +6,7 @@ import java.util.UUID
 import org.scalatest.concurrent.Timeouts
 import org.scalatest.{Matchers, WordSpec}
 
-class AvroInputStreamTest extends WordSpec with Matchers with Timeouts {
+class AvroDataInputStreamTest extends WordSpec with Matchers with Timeouts {
 
   case class Booleans(bool: Boolean)
   case class BigDecimalTest(decimal: BigDecimal)
