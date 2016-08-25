@@ -36,12 +36,12 @@ object Build extends Build {
     ),
     publishTo <<= version {
       (v: String) =>
-        val nexus = "https://oss.sonatype.org/"
         if (v.trim.endsWith("SNAPSHOT"))
-          Some("snapshots" at nexus + "content/repositories/snapshots")
+          Some("Cakesolutions Artifactory Snapshots" at "https://artifactory.hub.bitbrew.com/artifactory/libs-snapshot-local")
         else
-          Some("releases" at nexus + "service/local/staging/deploy/maven2")
+          Some("Cakesolutions Artifactory Releases" at "https://artifactory.hub.bitbrew.com/artifactory/libs-release-local")
     },
+    credentials += Credentials(Path.userHome / ".artifactory" / ".credentials"),
     pomExtra := {
       <url>https://github.com/sksamuel/avro4s</url>
         <licenses>
